@@ -5,17 +5,27 @@
  */
 package dialoguer;
 
+import java.awt.Toolkit;
+import entite.Explorer;
+
 /**
  *
  * @author Packard Bell
  */
-public class charge extends javax.swing.JFrame {
+public class Charge extends javax.swing.JFrame {
 
     /**
      * Creates new form charge
      */
-    public charge() {
+    public Charge() {
         initComponents();
+        complementGUI();
+    }
+    private void complementGUI(){
+        //Affiche le logo
+     setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/images/logo/Tholdisimplepetit.png")));
+        //Affiche le nom
+     setTitle("MEEC");
     }
 
     /**
@@ -29,9 +39,9 @@ public class charge extends javax.swing.JFrame {
 
         jLab_Titre = new javax.swing.JLabel();
         jBut_Quitter = new javax.swing.JButton();
-        jButton_Import = new javax.swing.JButton();
         jButton_Export = new javax.swing.JButton();
         jButtonRetour = new javax.swing.JButton();
+        jButton_import = new javax.swing.JButton();
         jLabel4 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -50,10 +60,6 @@ public class charge extends javax.swing.JFrame {
         });
         getContentPane().add(jBut_Quitter, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 100, 50));
 
-        jButton_Import.setFont(new java.awt.Font("Microsoft JhengHei UI", 0, 18)); // NOI18N
-        jButton_Import.setText("Import XML");
-        getContentPane().add(jButton_Import, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, 220, 40));
-
         jButton_Export.setFont(new java.awt.Font("Microsoft JhengHei UI", 0, 18)); // NOI18N
         jButton_Export.setText("Export XML");
         jButton_Export.addActionListener(new java.awt.event.ActionListener() {
@@ -61,7 +67,7 @@ public class charge extends javax.swing.JFrame {
                 jButton_ExportActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton_Export, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 220, 40));
+        getContentPane().add(jButton_Export, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 210, 220, 40));
 
         jButtonRetour.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
         jButtonRetour.setText("Retour");
@@ -71,6 +77,15 @@ public class charge extends javax.swing.JFrame {
             }
         });
         getContentPane().add(jButtonRetour, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 370, 90, 50));
+
+        jButton_import.setFont(new java.awt.Font("Microsoft JhengHei UI", 0, 18)); // NOI18N
+        jButton_import.setText("Import XML");
+        jButton_import.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton_importActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton_import, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 130, 220, 40));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/fond/fond.jpg"))); // NOI18N
         getContentPane().add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 770, 440));
@@ -89,8 +104,14 @@ public class charge extends javax.swing.JFrame {
     }//GEN-LAST:event_jButtonRetourActionPerformed
 
     private void jButton_ExportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_ExportActionPerformed
-        // TODO add your handling code here:
+        Export unexport = new Export();
+        unexport.setVisible(true);
+        dispose();
     }//GEN-LAST:event_jButton_ExportActionPerformed
+
+    private void jButton_importActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_importActionPerformed
+        
+    }//GEN-LAST:event_jButton_importActionPerformed
 
     /**
      * @param args the command line arguments
@@ -109,20 +130,21 @@ public class charge extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(charge.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Charge.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(charge.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Charge.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(charge.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Charge.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(charge.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Charge.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new charge().setVisible(true);
+                new Charge().setVisible(true);
             }
         });
     }
@@ -131,7 +153,7 @@ public class charge extends javax.swing.JFrame {
     private javax.swing.JButton jBut_Quitter;
     private javax.swing.JButton jButtonRetour;
     private javax.swing.JButton jButton_Export;
-    private javax.swing.JButton jButton_Import;
+    private javax.swing.JButton jButton_import;
     private javax.swing.JLabel jLab_Titre;
     private javax.swing.JLabel jLabel4;
     // End of variables declaration//GEN-END:variables

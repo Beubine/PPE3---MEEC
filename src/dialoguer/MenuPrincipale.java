@@ -272,8 +272,8 @@ public class MenuPrincipale extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton_import_exportMouseExited
 
     private void jButton_import_exportActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton_import_exportActionPerformed
-        charge uncharge = new charge();
-    uncharge.setVisible(true);
+        Charge uneCharge = new Charge();
+    uneCharge.setVisible(true);
     dispose();
     }//GEN-LAST:event_jButton_import_exportActionPerformed
 

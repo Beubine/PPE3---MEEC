@@ -271,25 +271,38 @@ public class LeConteneur{
             }
 
             }
-        public boolean modifier (String oldC, String newC){
-        
+        public boolean modifier (String numcli, String dateariv, String numid){
+
         boolean bmodifier = false;
         String requete = null;
       try{
-        requete="UPDATE leconteneur set numcli=?, date_arrivee=? Where numid = ?";
-        PreparedStatement prepare = laConnexion.prepareStatement(requete);
-        prepare.setString(1,newC);
-        prepare.setString(2, oldC);
-        prepare.executeUpdate();
-        bmodifier=true;
+            if(numcli.equals("")){
+            requete="UPDATE leconteneur set numcli=NULL, date_arrivee=? Where numid = ?";
+            PreparedStatement prepare = laConnexion.prepareStatement(requete);
+            prepare.setString(1, dateariv);
+            prepare.setString(2, numid);
+            prepare.executeUpdate();
+            }else{
+
+            requete="UPDATE leconteneur set numcli=?, date_arrivee=? Where numid = ?";
+            PreparedStatement prepare = laConnexion.prepareStatement(requete);
+            prepare.setString(1,numcli);
+            prepare.setString(2, dateariv);
+            prepare.setString(3, numid);
+            prepare.executeUpdate();
+
+            }
+            bmodifier=true;
       }catch (SQLException ex){
-          
-          JOptionPane.showMessageDialog(null,"Modification rencontrée, probleme rencontreé","Probleme",JOptionPane.ERROR_MESSAGE);
+
+          JOptionPane.showMessageDialog(null,"Modification rencontrée, probleme rencontrée","Probleme",JOptionPane.ERROR_MESSAGE);
       }
       return bmodifier;
         }
         
-    } 
+        }
+        
+   
      
      
      

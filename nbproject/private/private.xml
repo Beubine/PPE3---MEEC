@@ -3,12 +3,9 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Program%20Files%20(x86)/EasyPHP-Devserver-17/eds-www/MEEC/src/dialoguer/FenAjout.java</file>
-            <file>file:/C:/Program%20Files%20(x86)/EasyPHP-Devserver-17/eds-www/MEEC/src/entite/LeConteneur.java</file>
-            <file>file:/C:/Program%20Files%20(x86)/EasyPHP-Devserver-17/eds-www/MEEC/src/dialoguer/FenModification.java</file>
-            <file>file:/C:/Program%20Files%20(x86)/EasyPHP-Devserver-17/eds-www/MEEC/src/entite/Typeconteneur.java</file>
-            <file>file:/C:/Program%20Files%20(x86)/EasyPHP-Devserver-17/eds-www/MEEC/src/dialoguer/FENSuppr.java</file>
-            <file>file:/C:/Program%20Files%20(x86)/EasyPHP-Devserver-17/eds-www/MEEC/src/dialoguer/FENModifEtat.java</file>
+            <file>file:/C:/Users/Packard%20Bell/Documents/Git%20MEEC/MEEC/src/dialoguer/Charge.java</file>
+            <file>file:/C:/Users/Packard%20Bell/Documents/Git%20MEEC/MEEC/src/dialoguer/Export.java</file>
+            <file>file:/C:/Users/Packard%20Bell/Documents/Git%20MEEC/MEEC/src/controle/Modele/ModeleConteneur.java</file>
         </group>
     </open-files>
 </project-private>

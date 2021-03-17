@@ -8,7 +8,9 @@ package dialoguer;
 import entite.LeConteneur;
 import entite.Taille;
 import entite.Typeconteneur;
+import java.awt.Color;
 import java.awt.Toolkit;
+import static java.lang.System.exit;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -34,7 +36,7 @@ public class FenModification extends javax.swing.JFrame {
         LeConteneur uncont = new LeConteneur(numcont);
         initComponents();
         complementGUI();
-        jTextId.setText(uncont.getLesEnrg().get(0).getNumid());
+        jtextnumcont.setText(uncont.getLesEnrg().get(0).getNumid());
         String type=uncont.getLesEnrg().get(0).getType();
         String t=type.substring(0,1);
         Typeconteneur untype=new Typeconteneur(t);
@@ -65,7 +67,7 @@ public class FenModification extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jTextId = new javax.swing.JTextField();
+        jtextnumcont = new javax.swing.JTextField();
         jTextDate = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jTextModele = new javax.swing.JTextField();
@@ -80,11 +82,8 @@ public class FenModification extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jTextId.setText("jTextField1");
-        jTextId.setEnabled(false);
-        getContentPane().add(jTextId, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 50, 130, -1));
-
-        jTextDate.setText("jTextField1");
+        jtextnumcont.setEnabled(false);
+        getContentPane().add(jtextnumcont, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 50, 130, -1));
         getContentPane().add(jTextDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 220, 130, -1));
 
         jButton1.setText("Valider");
@@ -95,14 +94,10 @@ public class FenModification extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 170, -1));
 
-        jTextModele.setText("jTextField1");
         jTextModele.setEnabled(false);
         getContentPane().add(jTextModele, new org.netbeans.lib.awtextra.AbsoluteConstraints(490, 100, 250, -1));
-
-        jTextNumCli.setText("jTextField1");
         getContentPane().add(jTextNumCli, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 180, 130, -1));
 
-        jTextEmplacement.setText("jTextField1");
         jTextEmplacement.setEnabled(false);
         jTextEmplacement.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -111,9 +106,13 @@ public class FenModification extends javax.swing.JFrame {
         });
         getContentPane().add(jTextEmplacement, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 140, 130, -1));
 
-        jTextIDType.setText("jTextField1");
         jTextIDType.setEnabled(false);
         jTextIDType.setInheritsPopupMenu(true);
+        jTextIDType.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextIDTypeActionPerformed(evt);
+            }
+        });
         getContentPane().add(jTextIDType, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 100, 130, -1));
 
         jButtonRetour.setFont(new java.awt.Font("Segoe UI", 0, 18)); // NOI18N
@@ -159,22 +158,34 @@ public class FenModification extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextEmplacementActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        String numcont = jTextId.getText();
+        String numcont = jtextnumcont.getText();
         String emplacement =jTextEmplacement.getText();
         String numCli=jTextNumCli.getText();
+        String date_arrivee=jTextDate.getText();
         try {
             Date unedate = new SimpleDateFormat("yyyy-mm-dd").parse(jTextDate.getText());
+        
+            LeConteneur unconteneur =new LeConteneur();
+            if(unconteneur.modifier( numCli, date_arrivee, numcont)){
+                JOptionPane.showMessageDialog(null, "Le conteneur a bien été modifié");    
+                MenuPrincipale unefen = new MenuPrincipale();
+                unefen.setVisible(true);
+                dispose();
+            }else{
+                JOptionPane.showMessageDialog(null, "Modification non effectué");
+            }
         } catch (ParseException ex) {
-           JOptionPane.showMessageDialog(null,"Erreur");
+           JOptionPane.showMessageDialog(null,"Erreur, date mal renseigné : AAAA-MM-JJ");
+           jTextDate.requestFocus();
         }
-        LeConteneur unconteneur =new LeConteneur();
-        unconteneur.modifier(/*parametre de modifier*/);
-        
-        
         
                  
         
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jTextIDTypeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextIDTypeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextIDTypeActionPerformed
 
     /**
      * @param args the command line arguments
@@ -221,8 +232,8 @@ public class FenModification extends javax.swing.JFrame {
     private javax.swing.JTextField jTextDate;
     private javax.swing.JTextField jTextEmplacement;
     private javax.swing.JTextField jTextIDType;
-    private javax.swing.JTextField jTextId;
     private javax.swing.JTextField jTextModele;
     private javax.swing.JTextField jTextNumCli;
+    private javax.swing.JTextField jtextnumcont;
     // End of variables declaration//GEN-END:variables
 }

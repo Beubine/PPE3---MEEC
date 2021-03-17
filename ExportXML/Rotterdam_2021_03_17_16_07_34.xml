@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bateau nom="azerty">
+  <conteneur>
+    <numero>THOJ9635620</numero>
+    <quai>01</quai>
+    <allee>01</allee>
+    <emplacement>02</emplacement>
+    <etage>0</etage>
+    <client>2</client>
+  </conteneur>
+  <conteneur>
+    <numero>THOJ1122339</numero>
+    <quai>01</quai>
+    <allee>01</allee>
+    <emplacement>02</emplacement>
+    <etage>1</etage>
+    <client>3</client>
+  </conteneur>
+</Bateau>

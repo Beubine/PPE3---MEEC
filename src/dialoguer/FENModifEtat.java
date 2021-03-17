@@ -99,6 +99,7 @@ public class FENModifEtat extends javax.swing.JFrame {
         getContentPane().add(jButtonRetour, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 370, 90, 50));
 
         jTable1.setModel(unModeleConteneur);
+        jTable1.setSelectionMode(javax.swing.ListSelectionModel.SINGLE_SELECTION);
         jScrollPane1.setViewportView(jTable1);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(300, 10, -1, 410));

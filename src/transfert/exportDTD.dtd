@@ -1,0 +1,10 @@
+<? xml version="1.0" encoding='ISO-8859-1'?>
+<!ELEMENT bateau (conteneur+)>
+<!ATTLIST bateau nom CDATA #REQUIRED>
+<!ELEMENT conteneur (numero, quai, emplacement, etage, client?)>
+<!ELEMENT numero (#PCDATA)>
+<!ELEMENT quai (#PCDATA)>
+<!ELEMENT allee (#PCDATA)>
+<!ELEMENT emplacement (#PCDATA)>
+<!ELEMENT etage (#PCDATA)>
+<!ELEMENT client (#PCDATA)>

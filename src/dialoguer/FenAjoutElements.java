@@ -183,6 +183,12 @@ public class FenAjoutElements extends javax.swing.JFrame {
         getContentPane().add(jButtonSupprimerEmplacement, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 270, 190, -1));
         getContentPane().add(jTextQuai, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 20, 150, 30));
         getContentPane().add(jTextAllee, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 130, 150, 30));
+
+        jTextEmplacement.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jTextEmplacementActionPerformed(evt);
+            }
+        });
         getContentPane().add(jTextEmplacement, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 230, 150, 30));
 
         jComboQuai.addItemListener(new java.awt.event.ItemListener() {
@@ -427,6 +433,10 @@ public class FenAjoutElements extends javax.swing.JFrame {
             
         }    
     }//GEN-LAST:event_jComboEmplacementItemStateChanged
+
+    private void jTextEmplacementActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextEmplacementActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jTextEmplacementActionPerformed
 
     /**
      * @param args the command line arguments
